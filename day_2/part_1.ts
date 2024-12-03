@@ -46,7 +46,7 @@ function isAllDescending(report: number[]): boolean {
 
 if (import.meta.main) {
   const matrix: number[][] = [];
-  const input = await Deno.readTextFile("input.txt");
+  const input = await Deno.readTextFile(`${Deno.cwd()}/day_2/input.txt`);
   const lines = input.split("\n");
   for (const line of lines) {
     const report = line.split(" ").map((l) => parseInt(l));

@@ -2,4 +2,4 @@
 
 Written in Typescript using the [Deno](https://deno.com/) runtime.
 
-Each day is in a directory. Each solution can be ran via `deno/day_X/part_X.ts`.
+Each day is in a directory. Each solution can be ran via `deno --allow-read day_X/part_X.ts`.

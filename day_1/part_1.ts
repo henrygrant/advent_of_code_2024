@@ -12,7 +12,7 @@ export function diffScore(a: number[], b: number[]): number {
 if (import.meta.main) {
   const list1: number[] = [];
   const list2: number[] = [];
-  const input = await Deno.readTextFile("input.txt");
+  const input = await Deno.readTextFile(`${Deno.cwd()}/day_1/input.txt`);
   const lines = input.split("\n");
   for (const line of lines) {
     const [a, b] = line.split("   ");
