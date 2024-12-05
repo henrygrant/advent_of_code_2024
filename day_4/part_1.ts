@@ -14,13 +14,10 @@ if (import.meta.main) {
   const cursor = { x: 0, y: 0 };
   let ret = 0;
   while (cursor.y <= matrix.length - 1) {
-    // while (cursor.y < 10) {
     cursor.x = 0;
     while (cursor.x <= matrix[cursor.y].length - 1) {
-      // while (cursor.x <= 20) {
       console.log(cursor);
 
-      // once we've found a match, start looking in all directions
       if (matrix[cursor.y][cursor.x] === TARGET[0]) {
         let n: string = "";
         let ne: string = "";
@@ -75,7 +72,6 @@ if (import.meta.main) {
         [n, ne, e, se, s, sw, w, nw].forEach((x) => x === TARGET && ret++);
       }
       cursor.x++;
-      // process.stdout.write("\n");
     }
     cursor.y++;
   }
