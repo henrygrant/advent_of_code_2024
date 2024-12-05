@@ -1,3 +1,5 @@
+// https://adventofcode.com/2024/day/4#part1
+
 const TARGET = "XMAS";
 
 if (import.meta.main) {

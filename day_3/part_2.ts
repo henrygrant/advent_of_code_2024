@@ -1,3 +1,5 @@
+// https://adventofcode.com/2024/day/3#part2
+
 const ANY_COMMAND_REGEX: RegExp = /(mul\(\d+\,\d+\))|(don\'t\(\))|(do\(\))/g;
 const NUMBER_REGEX: RegExp = /\d+/g;
 const MUL_COMMAND_REGEX: RegExp = /mul\(\d+\,\d+\)/;

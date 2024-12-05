@@ -1,4 +1,6 @@
-export function diffScore(a: number[], b: number[]): number {
+// https://adventofcode.com/2024/day/1#part1
+
+function diffScore(a: number[], b: number[]): number {
   const sortedA = a.sort((a, b) => a - b);
   const sortedB = b.sort((a, b) => a - b);
   const distances: number[] = [];

@@ -1,4 +1,6 @@
-export function numSafeReports(matrix: number[][]): number {
+// https://adventofcode.com/2024/day/2#part2
+
+function numSafeReports(matrix: number[][]): number {
   let counter = 0;
   for (let i = 0; i < matrix.length; i++) {
     const report = matrix[i];

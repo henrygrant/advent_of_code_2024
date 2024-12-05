@@ -1,3 +1,5 @@
+// https://adventofcode.com/2024/day/3#part1
+
 function filterGarbage(garb: string): string[] {
   const commandRegex = /mul\(\d+\,\d+\)/g;
   const matchItr = garb.matchAll(commandRegex);

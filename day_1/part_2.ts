@@ -1,4 +1,6 @@
-export function simulScore(a: number[], b: number[]): number {
+// https://adventofcode.com/2024/day/1#part2
+
+function simulScore(a: number[], b: number[]): number {
   const simul: number[] = [];
   for (let i = 0; i < a.length; i++) {
     const occurances_in_b = b.filter((b) => b === a[i]).length;
