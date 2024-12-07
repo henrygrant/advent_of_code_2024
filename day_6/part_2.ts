@@ -89,6 +89,7 @@ function runSimulation(matrix: string[][], override?: Cursor): Status {
       break;
     }
     const nextPos = findNextPosition(dir, cursor);
+    // if the next space is in bounds, but is a blocker
     if (
       (isInBounds(nextPos, matrix) && matrix[nextPos.y][nextPos.x] === BLOCK) ||
       (override && override.x === nextPos.x && override.y === nextPos.y)
