@@ -1,5 +1,5 @@
 interface EntryMap {
-  [key: string]: number[];
+  [key: string]: number[][];
 }
 
 const getPermutations = (tot: number, ops: string[]): string[] => {
@@ -41,24 +41,25 @@ if (import.meta.main) {
       .split(" ")
       .filter((n) => n)
       .map((n) => parseInt(n));
-    if (testValRaw in map) {
-      console.log(testValRaw);
+    if (!(testValRaw in map)) {
+      map[testValRaw] = [];
     }
-    map[testValRaw] = nums;
+    map[testValRaw].push(nums);
   }
   let sum = 0;
   for (const key in map) {
-    const nums = map[key];
-    const perms = getPermutations(nums.length - 1, OPS);
+    for (const nums of map[key]) {
+      const perms = getPermutations(nums.length - 1, OPS);
 
-    for (const perm of perms) {
-      let mathResult = nums[0];
-      for (let i = 0; i < nums.length - 1; i++) {
-        mathResult = doMath(perm[i], mathResult, nums[i + 1]);
-      }
-      if (mathResult === parseInt(key)) {
-        sum += parseInt(key);
-        break;
+      for (const perm of perms) {
+        let mathResult = nums[0];
+        for (let i = 0; i < nums.length - 1; i++) {
+          mathResult = doMath(perm[i], mathResult, nums[i + 1]);
+        }
+        if (mathResult === parseInt(key)) {
+          sum += parseInt(key);
+          break;
+        }
       }
     }
   }
