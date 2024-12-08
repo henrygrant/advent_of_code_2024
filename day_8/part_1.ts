@@ -8,7 +8,7 @@ interface EntryMap {
 }
 
 if (import.meta.main) {
-  const input = await Deno.readTextFile(`${Deno.cwd()}/day_8/input.txt`);
+  const input = await Deno.readTextFile(`${Deno.cwd()}/day_8/inputsmall.txt`);
   const ignoredChars = [".", "\n"];
   const freqs = [...new Set(input)].filter((ch) => !ignoredChars.includes(ch));
   const rows = input.split("\n");
