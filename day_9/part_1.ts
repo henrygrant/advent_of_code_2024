@@ -1,50 +1,41 @@
-function swapCharsInString(str: string, index1: number, index2: number) {
-  const char1 = str[index1];
-  const char2 = str[index2];
-  str =
-    str.slice(0, index1) +
-    char2 +
-    str.slice(index1 + 1, index2) +
-    char1 +
-    str.slice(index2 + 1);
-  return str;
-}
-
 if (import.meta.main) {
-  const input = await Deno.readTextFile(`${Deno.cwd()}/day_9/inputsmall.txt`);
-  let str = "";
+  const input = await Deno.readTextFile(`${Deno.cwd()}/day_9/input.txt`);
+  const arr: string[] = [];
 
-  console.log(`original:   ${input}`);
+  // console.log(`original:   ${input}`);
 
   for (let i = 0; i < input.length; i++) {
     const fileSize = parseInt(input[i * 2]);
     const freeSpace = parseInt(input[i * 2 + 1]);
-    for (let j = 0; j < fileSize; j++) str += `${i}`;
-    for (let j = 0; j < freeSpace; j++) str += ".";
+    for (let j = 0; j < fileSize; j++) arr.push(`${i}`);
+    for (let j = 0; j < freeSpace; j++) arr.push(".");
   }
-  console.log(`parsed:     ${str}`);
+  // console.log(`parsed:     ${arr.join("")}`);
 
-  const spaceUsed = str.replaceAll(".", "").length;
-  for (let i = 0; i < str.length - 1; i++) {
-    if (str[i] === "." && i < spaceUsed) {
-      for (let j = str.length - 1; j >= 0; j--) {
-        if (str[j] !== ".") {
-          str = swapCharsInString(str, i, j);
-          console.log(`            ${str}`);
+  const spaceUsed = arr.filter((a) => a !== ".").length;
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] === "." && i < spaceUsed) {
+      for (let j = arr.length - 1; j >= 0; j--) {
+        if (arr[j] !== ".") {
+          const char1 = arr[i];
+          const char2 = arr[j];
+          arr[i] = char2;
+          arr[j] = char1;
+          // console.log(`            ${arr.join("")}`);
           break;
         }
       }
     }
   }
-  console.log(`compressed: ${str}`);
-  console.log();
+  // console.log(`compressed: ${arr.join("")}`);
+  // console.log();
   let sum = 0;
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] !== ".") {
-      console.log(
-        `   ${i} * ${str[i]} == ${i * parseInt(str[i])} | sum: ${sum}`
-      );
-      sum += i * parseInt(str[i]);
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== ".") {
+      // console.log(
+      //   `   ${i} * ${arr[i]} == ${i * parseInt(arr[i])} | sum: ${sum}`
+      // );
+      sum += i * parseInt(arr[i]);
     }
   }
   console.log(sum);
