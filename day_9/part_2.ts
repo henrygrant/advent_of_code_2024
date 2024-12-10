@@ -1,3 +1,5 @@
+// https://adventofcode.com/2024/day/9#part2
+
 if (import.meta.main) {
   const input = await Deno.readTextFile(`${Deno.cwd()}/day_9/input.txt`);
   const arr: string[] = [];

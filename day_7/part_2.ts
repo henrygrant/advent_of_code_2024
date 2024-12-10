@@ -1,3 +1,5 @@
+// https://adventofcode.com/2024/day/7#part2
+
 interface EntryMap {
   [key: string]: number[][];
 }

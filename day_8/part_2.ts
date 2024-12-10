@@ -1,3 +1,5 @@
+// https://adventofcode.com/2024/day/8#part2
+
 interface Coord {
   x: number;
   y: number;
