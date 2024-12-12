@@ -1,4 +1,7 @@
 // https://adventofcode.com/2024/day/11#part2
+
+// credit to Trevor Konya for helping me with this one: https://github.com/tkonya
+
 type Shortcuts = {
   [key: number]: {
     [key: number]: number;

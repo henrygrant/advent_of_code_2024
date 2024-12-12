@@ -1,1 +1,5 @@
-{}
+{
+  "imports": {
+    "nodejs-polars": "npm:nodejs-polars@^0.17.0"
+  }
+}
